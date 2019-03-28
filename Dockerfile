@@ -18,4 +18,5 @@ RUN apt-get update && \
     add-apt-repository ppa:ansible/ansible && \
     apt-get update && \
     apt-get install -y ansible && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    ln -s /usr/bin/python3 /usr/bin/python
