@@ -14,10 +14,5 @@ LABEL description="A multistage Ubuntu bionic image with Packer and Ansible"
 COPY --from=packer /usr/local/bin/packer /usr/local/bin/packer
 
 RUN apt-get update && \
-    apt-get install -y python3 software-properties-common && \
-    add-apt-repository ppa:ansible/ansible && \
-    apt-get update && \
-    apt-get install -y ansible && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm /usr/bin/python && \
-    ln -s /usr/bin/python3 /usr/bin/python
+    apt-get install -qq -y python3-pip && \
+    pip3 install ansible
