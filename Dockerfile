@@ -16,5 +16,5 @@ LABEL description="A multistage Ubuntu bionic image with Packer and Ansible"
 COPY --from=packer /usr/local/bin/packer /usr/local/bin/packer
 
 RUN apt-get update && \
-    apt-get install -qq -y python3-pip && \
+    apt-get install -qq -y python3-pip openssh-client && \
     pip3 install ansible
