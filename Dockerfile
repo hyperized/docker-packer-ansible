@@ -1,9 +1,9 @@
 FROM ubuntu:bionic as packer
 
-ARG packer_version=1.3.5
+ARG packer_version=1.4.3
 
 RUN apt-get update && \
-    apt-get install -y wget unzip && \
+    apt-get install -qq -y wget unzip && \
     wget -q https://releases.hashicorp.com/packer/${packer_version}/packer_${packer_version}_linux_amd64.zip && \
     unzip packer_${packer_version}_linux_amd64.zip && \
     cp packer /usr/local/bin/
