@@ -1,6 +1,9 @@
+FROM hyperized/scratch:latest as trigger
+# Used to trigger Docker hubs auto build, which it wont do on the official images
+
 FROM ubuntu:bionic as packer
 
-ARG packer_version=1.4.3
+ARG packer_version=1.4.5
 
 RUN apt-get update && \
     apt-get install -qq -y wget unzip && \
