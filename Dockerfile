@@ -3,7 +3,7 @@ FROM hyperized/scratch:latest as trigger
 
 FROM ubuntu:bionic as packer
 
-ARG packer_version=1.4.5
+ARG packer_version=1.6.0
 
 RUN apt-get update && \
     apt-get install -qq -y wget unzip && \
